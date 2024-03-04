@@ -1,0 +1,182 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Space Shooter</title>
+	<link href="images/spaceship.png" rel="shortcut icon">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="menu" style="display:block;">
+	<div id="box2">
+		<table id="menuOptions" border="0">
+			<tr height="33.3%"><td width="100%" valign="middle" align="center">
+				<div id="easyButton" class="button" onclick="easyMode()" onmouseover="f1()" onmouseout="fu1()">
+					<p id="easyText" class="buttonText">EASY</p>
+				</div>
+			</td></tr>
+			<tr height="33.3%"><td width="100%" valign="middle" align="center">
+				<div id="mediumButton" class="button" onclick="mediumMode()" onmouseover="f2()" onmouseout="fu2()">
+					<p id="mediumText" class="buttonText">MEDIUM</p>
+				</div>
+			</td></tr>
+			<tr height="33.3%"><td width="100%" valign="middle" align="center">
+				<div id="hardButton" class="button" onclick="hardMode()" onmouseover="f3()" onmouseout="fu3()">
+					<p id="hardText" class="buttonText">HARD</p>
+				</div>
+			</td></tr>
+		</table>
+		<p id="credits">Made By: Dhairya Chopra</p>
+	</div>
+</div>
+<div id="game" style="display:none;">
+	<img src="images/shoot2.jpg" id="shootButton" onclick="shoot()">
+	<div id="box">
+		<table id="table" style="height:100%;width:100%;" border="0" bordercolor="white">
+		<tr>
+			<td width="14.28%" height="85.72%" valign="top">
+				<img src="images/enemy.png" class="e" id="e1">
+			</td>
+			<td width="14.28%" height="85.72%" valign="top">
+				<img src="images/enemy.png" class="e" id="e2">
+			</td>
+			<td width="14.28%" height="85.72%" valign="top">
+				<img src="images/enemy.png" class="e" id="e3">
+			</td>
+			<td width="14.28%" height="85.72%" valign="top">
+				<img src="images/enemy.png" class="e" id="e4">
+			</td>
+			<td width="14.28%" height="85.72%" valign="top">
+				<img src="images/enemy.png" class="e" id="e5">
+			</td>
+			<td width="14.28%" height="85.72%" valign="top">
+				<img src="images/enemy.png" class="e" id="e6">
+			</td>
+			<td width="14.28%" height="85.72%" valign="top">
+				<img src="images/enemy.png" class="e" id="e7">
+			</td>
+		</tr>
+		<tr style="position:relative;">
+			<td width="14.28%" height="14.28%" valign="top" style="position:relative;">
+				<img id="ss1" style="display:none;width:100%;height:auto;z-index:1;position:absolute;" src="images/spaceship.png"></img>
+			</td>
+			<td width="14.28%" height="14.28%" valign="top" style="position:relative;">
+				<img id="ss2" style="display:none;width:100%;height:auto;z-index:1;position:absolute;" src="images/spaceship.png"></img>
+			</td>
+			<td width="14.28%" height="14.28%" valign="top" style="position:relative;">
+				<img id="ss3" style="display:none;width:100%;height:auto;z-index:1;position:absolute;" src="images/spaceship.png"></img>
+			</td>
+			<td width="14.28%" height="14.28%" valign="top" style="position:relative;">
+				<img id="ss4" style="display:block;width:100%;height:auto;z-index:1;position:absolute;" src="images/spaceship.png"></img>
+			</td>
+			<td width="14.28%" height="14.28%" valign="top" style="position:relative;">
+				<img id="ss5" style="display:none;width:100%;height:auto;z-index:1;position:absolute;" src="images/spaceship.png"></img>
+			</td>
+			<td width="14.28%" height="14.28%" valign="top" style="position:relative;">
+				<img id="ss6" style="display:none;width:100%;height:auto;z-index:1;position:absolute;" src="images/spaceship.png"></img>
+			</td>
+			<td width="14.28%" height="14.28%" valign="top" style="position:relative;">
+				<img id="ss7" style="display:none;width:100%;height:auto;z-index:1;position:absolute;" src="images/spaceship.png"></img>
+			</td>
+		</tr>
+		</table>
+		<table id="table2" border="0" bordercolor="red">
+		<tr>
+			<td width="100%" height="33.3%">
+				<img id="sl1" class="ss" src="images/spaceship.png"></img>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" height="33.3%">
+				<img id="sl2" class="ss" src="images/spaceship.png"></img>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" height="33.3%">
+				<img id="sl3" class="ss" src="images/spaceship.png"></img>
+			</td>
+		</tr>
+		</table>
+		<table id="energyBar" bgcolor="gray">
+		<tr>
+			<td>
+			</td>
+		</tr>
+		</table>
+		<table id="energyHeight">
+		<tr>
+			<td>
+			</td>
+		</tr>
+		</table>
+	</div>
+	<table id="shootTable" border="0">
+		<tr>
+			<td width="14.28%" height="85.72%" valign="bottom">
+				<p style="text-align:center;">
+					<img src="images/blast6.png" class="blast" id="blast1">
+				</p>
+			</td>
+			<td width="14.28%" height="85.72%" valign="bottom">
+				<p style="text-align:center;">
+					<img src="images/blast6.png" class="blast" id="blast2">
+				</p>
+			</td>
+			<td width="14.28%" height="85.72%" valign="bottom">
+				<p style="text-align:center;">
+					<img src="images/blast6.png" class="blast" id="blast3">
+				</p>
+			</td>
+			<td width="14.28%" height="85.72%" valign="bottom">
+				<p style="text-align:center;">
+					<img src="images/blast6.png" class="blast" id="blast4">
+				</p>
+			</td>
+			<td width="14.28%" height="85.72%" valign="bottom">
+				<p style="text-align:center;">
+					<img src="images/blast6.png" class="blast" id="blast5">
+				</p>
+			</td>
+			<td width="14.28%" height="85.72%" valign="bottom">
+				<p style="text-align:center;">
+					<img src="images/blast6.png" class="blast" id="blast6">
+				</p>
+			</td>
+			<td width="14.28%" height="85.72%" valign="bottom">
+				<p style="text-align:center;">
+					<img src="images/blast6.png" class="blast" id="blast7">
+				</p>
+			</td>
+		</tr>
+		<tr style="position:relative;">
+			<td width="14.28%" height="14.28%" valign="bottom" style="position:relative;">
+				
+			</td>
+			<td width="14.28%" height="14.28%" valign="bottom" style="position:relative;">
+				
+			</td>
+			<td width="14.28%" height="14.28%" valign="bottom" style="position:relative;">
+				
+			</td>
+			<td width="14.28%" height="14.28%" valign="bottom" style="position:relative;">
+				
+			</td>
+			<td width="14.28%" height="14.28%" valign="bottom" style="position:relative;">
+				
+			</td>
+			<td width="14.28%" height="14.28%" valign="bottom" style="position:relative;">
+				
+			</td>
+			<td width="14.28%" height="14.28%" valign="bottom" style="position:relative;">
+				
+			</td>
+		</tr>
+	</table>
+	<div id="scoreBox"><p id="scoreText"></p></div>
+	<div id="left" style="height:100%;width:50%;position:absolute;top:0%;left:0%;" onclick="oppRight()"></div>
+	<div id="right" style="height:100%;width:50%;position:absolute;top:0%;left:50%;" onclick="right()"></div>
+</div>
+<script src="js/gameScript.js"></script>
+<script src="js/responsive.js"></script>
+<script src="js/menuFormat.js"></script>
+</body>
+</html>
